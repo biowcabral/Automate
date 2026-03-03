@@ -144,6 +144,11 @@ export default function WorkflowBuilder() {
   const hubT    = local(progress, ...P.HUB_IN);
   const pkts    = progress >= P.PACKETS;
 
+  // Scroll-driven zoom: diagram starts small and grows as if jumping out of the screen
+  const zoom = 0.36 + ease(progress) * 0.90; // 0.36 → 1.26
+  // Subtle vertical drift toward viewer (pushes up slightly as it grows)
+  const driftY = (1 - zoom) * 18;
+
   function aiSpokeT(i: number)    { const s = P.AI_SPOKE_START    + i * P.AI_SPOKE_STRIDE;      return local(progress, s, s + 0.10); }
   function aiNodeT(i: number)     { const s = P.AI_SPOKE_START    + i * P.AI_SPOKE_STRIDE + P.AI_NODE_DELAY; return local(progress, s, s + 0.10); }
   function dataSpokeT(i: number)  { const s = P.DATA_START        + i * P.DATA_STRIDE - 0.02;   return local(progress, s, s + 0.10); }
@@ -194,6 +199,13 @@ export default function WorkflowBuilder() {
 
         {/* SVG canvas */}
         <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 0 }}>
+          <div style={{
+            width: "100%", height: "100%",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            transform: `scale(${zoom}) translateY(${driftY}px)`,
+            transformOrigin: "center center",
+            willChange: "transform",
+          }}>
           <svg
             viewBox="55 -15 890 800"
             xmlns="http://www.w3.org/2000/svg"
@@ -471,6 +483,7 @@ export default function WorkflowBuilder() {
               </circle>
             </g>
           </svg>
+          </div>
         </div>
 
         {/* Stats + scroll progress */}
