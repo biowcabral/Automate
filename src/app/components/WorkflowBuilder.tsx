@@ -5,27 +5,27 @@ import { useEffect, useRef, useState } from "react";
 const NODES = [
   {
     id: 0, x: 80, y: 160, label: "Trigger", sublabel: "New Lead", icon: "⚡",
-    color: "#a855f7", glow: "rgba(168,85,247,0.6)",
+    color: "#F97316", glow: "rgba(249,115,22,0.6)",
   },
   {
     id: 1, x: 280, y: 80, label: "CRM", sublabel: "HubSpot", icon: "🏢",
-    color: "#22d3ee", glow: "rgba(34,211,238,0.6)",
+    color: "#60A5FA", glow: "rgba(96,165,250,0.6)",
   },
   {
     id: 2, x: 280, y: 240, label: "AI Qualify", sublabel: "GPT-4o", icon: "🤖",
-    color: "#4ade80", glow: "rgba(74,222,128,0.6)",
+    color: "#FFFFFF", glow: "rgba(255,255,255,0.4)",
   },
   {
     id: 3, x: 490, y: 80, label: "Email", sublabel: "Send Sequence", icon: "✉️",
-    color: "#f59e0b", glow: "rgba(245,158,11,0.6)",
+    color: "#F97316", glow: "rgba(249,115,22,0.6)",
   },
   {
     id: 4, x: 490, y: 240, label: "WhatsApp", sublabel: "Auto Reply", icon: "💬",
-    color: "#4ade80", glow: "rgba(74,222,128,0.6)",
+    color: "#60A5FA", glow: "rgba(96,165,250,0.6)",
   },
   {
     id: 5, x: 700, y: 160, label: "Analytics", sublabel: "Dashboard", icon: "📊",
-    color: "#e879f9", glow: "rgba(232,121,249,0.6)",
+    color: "#F97316", glow: "rgba(249,115,22,0.6)",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function WorkflowBuilder() {
     <section className="py-24 bg-grid relative overflow-hidden" id="workflow">
       {/* Section label */}
       <div className="text-center mb-16 px-6">
-        <span className="text-purple-400 font-mono text-sm tracking-widest uppercase">
+        <span className="text-orange-400 font-mono text-sm tracking-widest uppercase">
           {"// automation_flow.n8n"}
         </span>
         <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-white">
@@ -110,7 +110,7 @@ export default function WorkflowBuilder() {
               </feMerge>
             </filter>
             <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#a855f7" />
+              <path d="M0,0 L0,6 L8,3 z" fill="#F97316" />
             </marker>
           </defs>
 
@@ -124,7 +124,7 @@ export default function WorkflowBuilder() {
               <path
                 key={i}
                 d={d}
-                stroke={edgeVisible(i) ? "#a855f7" : "transparent"}
+                stroke={edgeVisible(i) ? "#F97316" : "transparent"}
                 strokeWidth={2}
                 fill="none"
                 strokeDasharray={len}
@@ -145,7 +145,7 @@ export default function WorkflowBuilder() {
             const d = getEdgePath(fromNode, toNode);
             if (!edgeVisible(i)) return null;
             return (
-              <circle key={`pkt-${i}`} r="4" fill="#22d3ee" filter="url(#glow-filter)">
+              <circle key={`pkt-${i}`} r="4" fill="#60A5FA" filter="url(#glow-filter)">
                 <animateMotion dur={`${1.8 + i * 0.3}s`} repeatCount="indefinite" path={d} />
               </circle>
             );
@@ -168,7 +168,7 @@ export default function WorkflowBuilder() {
                 width={NODE_W}
                 height={NODE_H}
                 rx={10}
-                fill="#0f172a"
+                fill="#0D1B31"
                 stroke={node.color}
                 strokeWidth={1.5}
                 filter="url(#glow-filter)"
@@ -187,7 +187,7 @@ export default function WorkflowBuilder() {
                 {node.sublabel}
               </text>
               {/* Status dot */}
-              <circle cx={NODE_W - 10} cy={10} r={4} fill="#4ade80">
+              <circle cx={NODE_W - 10} cy={10} r={4} fill="#F97316">
                 <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
               </circle>
             </g>
@@ -197,9 +197,9 @@ export default function WorkflowBuilder() {
         {/* Execution counter */}
         <div className="mt-8 flex justify-center gap-6 flex-wrap">
           {[
-            { label: "Triggered today", value: "12,480", color: "text-purple-400" },
-            { label: "Avg. latency", value: "< 200ms", color: "text-cyan-400" },
-            { label: "Success rate", value: "99.97%", color: "text-green-400" },
+            { label: "Triggered today", value: "12,480", color: "text-orange-400" },
+            { label: "Avg. latency", value: "< 200ms", color: "text-blue-400" },
+            { label: "Success rate", value: "99.97%", color: "text-white" },
           ].map((stat) => (
             <div key={stat.label} className="glass rounded-xl px-6 py-3 text-center">
               <p className={`text-xl font-extrabold ${stat.color}`}>{stat.value}</p>

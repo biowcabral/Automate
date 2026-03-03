@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AutoFlow.ai — AI-Powered Business Automation",
+  title: "coding2u — AI-Powered Business Automation",
   description: "We build intelligent automation pipelines that eliminate manual work, handle customer interactions 24/7, and scale your business without limits.",
 };
 

@@ -4,13 +4,13 @@ export default function CTA() {
   return (
     <section className="py-28 px-6 relative overflow-hidden" id="contact">
       {/* BG glows */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-175 h-100 rounded-full bg-purple-700/20 blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-20 left-1/4 w-100 h-75 rounded-full bg-cyan-700/10 blur-[80px] pointer-events-none" />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-175 h-100 rounded-full bg-orange-700/15 blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-20 left-1/4 w-100 h-75 rounded-full bg-blue-900/10 blur-[80px] pointer-events-none" />
 
       <div className="relative max-w-3xl mx-auto text-center">
-        <span className="inline-block bg-purple-500/15 border border-purple-500/30 rounded-full px-5 py-1.5 text-purple-300 text-sm font-mono mb-8">
+        <span className="inline-block bg-orange-500/15 border border-orange-500/30 rounded-full px-5 py-1.5 text-orange-300 text-sm font-mono mb-8">
           {"// ready_to_scale.sh"}
-        </span>
+          </span>
         <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
           Stop Doing What{" "}
           <span className="grad-text">Machines Should Do</span>
@@ -25,8 +25,8 @@ export default function CTA() {
             href="#"
             className="group relative px-10 py-4 rounded-xl font-bold text-lg text-white overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, #a855f7, #6366f1)",
-              boxShadow: "0 0 30px rgba(168,85,247,0.5)",
+              background: "linear-gradient(135deg, #F97316, #EA580C)",
+              boxShadow: "0 0 30px rgba(249,115,22,0.5)",
             }}
           >
             <span className="relative z-10">Book Free Audit →</span>
@@ -34,7 +34,7 @@ export default function CTA() {
           </a>
           <a
             href="#workflow"
-            className="px-10 py-4 rounded-xl font-bold text-lg text-slate-300 border border-slate-600 hover:border-purple-500 hover:text-white transition-all"
+              className="px-10 py-4 rounded-xl font-bold text-lg text-slate-300 border border-slate-600 hover:border-orange-500 hover:text-white transition-all"
           >
             See How It Works
           </a>

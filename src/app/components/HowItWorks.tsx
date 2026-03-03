@@ -6,8 +6,8 @@ const STEPS = [
   {
     num: "01",
     icon: "🔍",
-    color: "border-purple-500 bg-purple-500/10",
-    numColor: "text-purple-400",
+    color: "border-orange-500 bg-orange-500/10",
+    numColor: "text-orange-400",
     title: "Discovery Call",
     desc: "We map every manual task in your business — emails, follow-ups, reports, scheduling — and identify the highest-ROI automation opportunities.",
     detail: "Avg.: 2-hour session",
@@ -15,8 +15,8 @@ const STEPS = [
   {
     num: "02",
     icon: "🗺️",
-    color: "border-cyan-500 bg-cyan-500/10",
-    numColor: "text-cyan-400",
+    color: "border-blue-500 bg-blue-500/10",
+    numColor: "text-blue-400",
     title: "Blueprint & Architect",
     desc: "Our engineers design a custom automation architecture tailored to your tech stack, data flows, and compliance requirements.",
     detail: "Delivered in 24h",
@@ -24,8 +24,8 @@ const STEPS = [
   {
     num: "03",
     icon: "⚙️",
-    color: "border-green-500 bg-green-500/10",
-    numColor: "text-green-400",
+    color: "border-white bg-white/5",
+    numColor: "text-white",
     title: "Build & Integrate",
     desc: "We build n8n/Make workflows, connect APIs, fine-tune AI agents, and test every edge case before touching production.",
     detail: "Sprint: 3–5 days",
@@ -33,8 +33,8 @@ const STEPS = [
   {
     num: "04",
     icon: "🚀",
-    color: "border-amber-500 bg-amber-500/10",
-    numColor: "text-amber-400",
+    color: "border-orange-400 bg-orange-400/10",
+    numColor: "text-orange-300",
     title: "Go Live & Monitor",
     desc: "Flip the switch. Your automations run 24/7 while we monitor, optimize, and alert you before any issues arise.",
     detail: "Live in 48h",
@@ -55,7 +55,7 @@ export default function HowItWorks() {
     <section className="py-24 px-6 bg-slate-950/60" id="how-it-works">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">
+          <span className="text-blue-400 font-mono text-sm tracking-widest uppercase">
             {"// process.timeline"}
           </span>
           <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-white">
@@ -67,7 +67,7 @@ export default function HowItWorks() {
         <div ref={ref} className="relative">
           {/* Vertical timeline line */}
           <div
-            className="absolute left-8 md:left-1/2 top-0 w-px bg-linear-to-b from-purple-500 via-cyan-500 to-amber-500"
+            className="absolute left-8 md:left-1/2 top-0 w-px bg-linear-to-b from-orange-500 via-blue-500 to-orange-300"
             style={{
               height: visible ? "100%" : "0%",
               transition: "height 1.5s ease",

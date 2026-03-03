@@ -7,7 +7,7 @@ import CTA from "./components/CTA";
 
 export default function Home() {
   return (
-    <main className="font-sans antialiased bg-[#020617] text-white">
+    <main className="font-sans antialiased bg-[#070B12] text-white">
       <Hero />
       <StatsBar />
       <WorkflowBuilder />

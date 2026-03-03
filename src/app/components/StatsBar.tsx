@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const STATS = [
-  { value: 2400, suffix: "+", label: "Automations Deployed", color: "text-purple-400" },
-  { value: 99.97, suffix: "%", label: "Uptime SLA", color: "text-green-400", decimal: true },
-  { value: 14, suffix: "M+", label: "Tasks Automated / mo", color: "text-cyan-400" },
-  { value: 48, suffix: "h", label: "Time to Go Live", color: "text-amber-400" },
+  { value: 2400, suffix: "+", label: "Automations Deployed", color: "text-orange-400" },
+  { value: 99.97, suffix: "%", label: "Uptime SLA", color: "text-white", decimal: true },
+  { value: 14, suffix: "M+", label: "Tasks Automated / mo", color: "text-blue-400" },
+  { value: 48, suffix: "h", label: "Time to Go Live", color: "text-orange-300" },
 ];
 
 function useCountUp(target: number, active: boolean, decimal = false) {
