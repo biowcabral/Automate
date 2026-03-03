@@ -1,35 +1,141 @@
-"use client";
+﻿"use client";
 
-import { SectionProps } from "./types";
+import dynamic from "next/dynamic";
 
-export default function Hero({ className = "" }: SectionProps) {
+const FloatingAvatar = dynamic(() => import("./FloatingAvatar"), { ssr: false });
+
+const NAV_LINKS = ["Features", "Workflow", "How It Works", "Contact"];
+
+export default function Hero() {
   return (
-    <section
-      className={`min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white ${className}`}
-    >
-      <p className="text-purple-400 font-semibold tracking-widest uppercase text-sm mb-4">
-        Automação Inteligente
-      </p>
-      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-4xl mb-6">
-        Automatize seu negócio e{" "}
-        <span className="text-purple-400">escale sem limites</span>
-      </h1>
-      <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-10">
-        Soluções de automação personalizadas para empresas que querem crescer
-        mais rápido, atender melhor e trabalhar com eficiência máxima.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4">
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#020617]" id="hero">
+      {/* BG glow blobs */}
+      <div className="absolute -top-40 -left-40 w-150 h-150 rounded-full bg-purple-900/30 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 -right-40 w-125 h-125 rounded-full bg-cyan-900/20 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-200 h-50 bg-purple-950/40 blur-[80px] pointer-events-none" />
+
+      {/* Grid overlay */}
+      <div className="absolute inset-0 bg-grid opacity-60 pointer-events-none" />
+
+      {/* Navbar */}
+      <nav className="relative z-20 flex items-center justify-between px-6 md:px-12 py-6">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
+            <span className="text-white font-extrabold text-sm">A</span>
+          </div>
+          <span className="text-white font-bold text-lg tracking-tight">AutoFlow<span className="text-purple-400">.ai</span></span>
+        </div>
+
+        <div className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link}
+              href={`#${link.toLowerCase().replace(/ /g, "-")}`}
+              className="text-slate-400 hover:text-white text-sm font-medium transition-colors"
+            >
+              {link}
+            </a>
+          ))}
+        </div>
+
         <a
-          href="#contato"
-          className="px-8 py-4 bg-purple-600 hover:bg-purple-500 rounded-xl font-bold text-lg transition-all"
+          href="#contact"
+          className="px-5 py-2.5 rounded-lg text-sm font-bold text-white"
+          style={{ background: "linear-gradient(135deg, #a855f7, #6366f1)", boxShadow: "0 0 20px rgba(168,85,247,0.4)" }}
         >
-          Quero automatizar agora
+          Get Free Audit
         </a>
-        <a
-          href="#como-funciona"
-          className="px-8 py-4 border border-purple-400 hover:bg-purple-900/40 rounded-xl font-bold text-lg transition-all"
-        >
-          Como funciona
+      </nav>
+
+      {/* Hero content */}
+      <div className="relative z-10 flex flex-1 flex-col lg:flex-row items-center justify-center gap-12 px-6 md:px-16 py-12">
+        {/* Left copy */}
+        <div className="flex-1 max-w-xl">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 rounded-full px-4 py-1.5 text-purple-300 text-xs font-mono mb-8">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            AI-Powered Business Automation
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+            Automate Everything.{" "}
+            <br />
+            <span className="grad-text text-glow-purple">Scale Without Limits.</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-slate-400 text-lg leading-relaxed mb-8">
+            We build intelligent automation pipelines that eliminate manual
+            work, handle customer interactions 24/7, and let your team focus on
+            what actually matters  growth.
+          </p>
+
+          {/* Terminal snippet */}
+          <div className="glass rounded-xl p-4 mb-8 font-mono text-sm">
+            <div className="flex items-center gap-1.5 mb-3">
+              <span className="w-3 h-3 rounded-full bg-red-400" />
+              <span className="w-3 h-3 rounded-full bg-amber-400" />
+              <span className="w-3 h-3 rounded-full bg-green-400" />
+              <span className="ml-2 text-slate-500 text-xs">autoflow-cli</span>
+            </div>
+            <p className="text-slate-500">
+              <span className="text-purple-400">$</span>{" "}
+              <span className="text-cyan-300">autoflow</span>{" "}
+              <span className="text-green-400">deploy</span>{" "}
+              <span className="text-slate-300">--workflow</span>{" "}
+              <span className="text-amber-400">lead-pipeline</span>
+            </p>
+            <p className="text-slate-500 mt-1">
+              <span className="text-green-400"></span>{" "}
+              <span className="text-slate-300">12 nodes connected</span>
+            </p>
+            <p className="text-slate-500">
+              <span className="text-green-400"></span>{" "}
+              <span className="text-slate-300">AI agent trained (847 samples)</span>
+            </p>
+            <p className="text-slate-500">
+              <span className="text-cyan-400"></span>{" "}
+              <span className="text-white font-bold">Live in 0.3s</span>
+              <span className="animate-blink text-purple-400 ml-1"></span>
+            </p>
+          </div>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact"
+              className="group relative flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base overflow-hidden"
+              style={{
+                background: "linear-gradient(135deg, #a855f7, #6366f1)",
+                boxShadow: "0 0 30px rgba(168,85,247,0.5)",
+              }}
+            >
+              <span>Start Automating </span>
+              <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+            <a
+              href="#workflow"
+              className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-slate-300 border border-slate-700 hover:border-purple-500 hover:text-white transition-all text-base"
+            >
+               Watch Demo
+            </a>
+          </div>
+        </div>
+
+        {/* Right  floating avatar */}
+        <div className="flex-1 flex items-center justify-center">
+          <FloatingAvatar />
+        </div>
+      </div>
+
+      {/* Bottom scroll hint */}
+      <div className="relative z-10 flex justify-center pb-8">
+        <a href="#workflow" className="flex flex-col items-center gap-2 text-slate-600 hover:text-slate-400 transition-colors animate-bounce">
+          <span className="text-xs font-mono">scroll to explore</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 2v12M3 9l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </a>
       </div>
     </section>

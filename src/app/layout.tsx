@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Automação Inteligente | Landing Pages",
-  description: "Soluções de automação para empresas que querem crescer mais rápido e trabalhar com eficiência máxima.",
+  title: "AutoFlow.ai — AI-Powered Business Automation",
+  description: "We build intelligent automation pipelines that eliminate manual work, handle customer interactions 24/7, and scale your business without limits.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
