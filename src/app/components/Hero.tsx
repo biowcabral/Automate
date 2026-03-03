@@ -46,85 +46,86 @@ export default function Hero() {
         </a>
       </nav>
 
-      {/* Hero content */}
-      <div className="relative z-10 flex flex-1 flex-col lg:flex-row items-center justify-center gap-12 px-6 md:px-16 py-12">
-        {/* Left copy */}
-        <div className="flex-1 max-w-xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 rounded-full px-4 py-1.5 text-orange-300 text-xs font-mono mb-8">
-            <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-            AI-Powered Business Automation
-          </div>
+      {/* Hero content — centered full-width layout */}
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center text-center gap-0 px-6 md:px-16 py-16">
 
-          {/* Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
-            Automate Everything.{" "}
-            <br />
-            <span className="grad-text text-glow-orange">Scale Without Limits.</span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-slate-400 text-lg leading-relaxed mb-8">
-            We build intelligent automation pipelines that eliminate manual
-            work, handle customer interactions 24/7, and let your team focus on
-            what actually matters &mdash; growth.
-          </p>
-
-          {/* Terminal snippet */}
-          <div className="glass rounded-xl p-4 mb-8 font-mono text-sm">
-            <div className="flex items-center gap-1.5 mb-3">
-              <span className="w-3 h-3 rounded-full bg-red-400" />
-              <span className="w-3 h-3 rounded-full bg-amber-400" />
-              <span className="w-3 h-3 rounded-full bg-green-400" />
-              <span className="ml-2 text-slate-500 text-xs">autoflow-cli</span>
-            </div>
-            <p className="text-slate-500">
-              <span className="text-orange-400">$</span>{" "}
-              <span className="text-blue-300">autoflow</span>{" "}
-              <span className="text-green-400">deploy</span>{" "}
-              <span className="text-slate-300">--workflow</span>{" "}
-              <span className="text-orange-300">lead-pipeline</span>
-            </p>
-            <p className="text-slate-500 mt-1">
-              <span className="text-green-400">✓</span>{" "}
-              <span className="text-slate-300">12 nodes connected</span>
-            </p>
-            <p className="text-slate-500">
-              <span className="text-green-400">✓</span>{" "}
-              <span className="text-slate-300">AI agent trained (847 samples)</span>
-            </p>
-            <p className="text-slate-500">
-              <span className="text-blue-400">⚡</span>{" "}
-              <span className="text-white font-bold">Live in 0.3s</span>
-              <span className="animate-blink text-orange-400 ml-1">█</span>
-            </p>
-          </div>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#contact"
-              className="group relative flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base overflow-hidden"
-              style={{
-                background: "linear-gradient(135deg, #F97316, #EA580C)",
-                boxShadow: "0 0 30px rgba(249,115,22,0.5)",
-              }}
-            >
-              <span>Start Automating →</span>
-              <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-            <a
-              href="#workflow"
-              className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-slate-300 border border-slate-700 hover:border-orange-500 hover:text-white transition-all text-base"
-            >
-              ▶ Watch Demo
-            </a>
-          </div>
+        {/* Floating avatar — decorative, behind content */}
+        <div className="absolute right-[6%] top-[12%] opacity-60 pointer-events-none select-none hidden lg:block">
+          <FloatingAvatar />
+        </div>
+        <div className="absolute left-[6%] bottom-[10%] opacity-30 pointer-events-none select-none hidden xl:block scale-75">
+          <FloatingAvatar />
         </div>
 
-        {/* Right — floating avatar */}
-        <div className="flex-1 flex items-center justify-center">
-          <FloatingAvatar />
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 rounded-full px-4 py-1.5 text-orange-300 text-xs font-mono mb-8">
+          <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
+          AI-Powered Business Automation
+        </div>
+
+        {/* Headline */}
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 max-w-4xl">
+          Automate Everything.{" "}
+          <br />
+          <span className="grad-text text-glow-orange">Scale Without Limits.</span>
+        </h1>
+
+        {/* Subheadline */}
+        <p className="text-slate-400 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+          We build intelligent automation pipelines that eliminate manual
+          work, handle customer interactions 24/7, and let your team focus on
+          what actually matters &mdash; growth.
+        </p>
+
+        {/* Terminal snippet — centered, wider */}
+        <div className="glass rounded-xl p-5 mb-10 font-mono text-sm w-full max-w-lg text-left">
+          <div className="flex items-center gap-1.5 mb-3">
+            <span className="w-3 h-3 rounded-full bg-red-400" />
+            <span className="w-3 h-3 rounded-full bg-amber-400" />
+            <span className="w-3 h-3 rounded-full bg-green-400" />
+            <span className="ml-2 text-slate-500 text-xs">autoflow-cli</span>
+          </div>
+          <p className="text-slate-500">
+            <span className="text-orange-400">$</span>{" "}
+            <span className="text-blue-300">autoflow</span>{" "}
+            <span className="text-green-400">deploy</span>{" "}
+            <span className="text-slate-300">--workflow</span>{" "}
+            <span className="text-orange-300">lead-pipeline</span>
+          </p>
+          <p className="text-slate-500 mt-1">
+            <span className="text-green-400">✓</span>{" "}
+            <span className="text-slate-300">12 nodes connected</span>
+          </p>
+          <p className="text-slate-500">
+            <span className="text-green-400">✓</span>{" "}
+            <span className="text-slate-300">AI agent trained (847 samples)</span>
+          </p>
+          <p className="text-slate-500">
+            <span className="text-blue-400">⚡</span>{" "}
+            <span className="text-white font-bold">Live in 0.3s</span>
+            <span className="animate-blink text-orange-400 ml-1">█</span>
+          </p>
+        </div>
+
+        {/* CTA buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contact"
+            className="group relative flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, #F97316, #EA580C)",
+              boxShadow: "0 0 30px rgba(249,115,22,0.5)",
+            }}
+          >
+            <span>Start Automating →</span>
+            <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </a>
+          <a
+            href="#workflow"
+            className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-slate-300 border border-slate-700 hover:border-orange-500 hover:text-white transition-all text-base"
+          >
+            ▶ Watch Demo
+          </a>
         </div>
       </div>
 
