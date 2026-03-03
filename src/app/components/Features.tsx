@@ -8,8 +8,8 @@ const FEATURES = [
     color: "from-orange-600 to-red-600",
     border: "border-orange-500/30",
     title: "AI-Powered Conversations",
-    desc: "GPT-4o agents handle leads, answer questions, and close deals 24/7 — with human-level intelligence.",
-    tags: ["NLP", "GPT-4o", "Voice"],
+    desc: "AI agents handle leads, answer questions, and close deals 24/7 — with human-level intelligence.",
+    tags: ["NLP", "AI Agents", "Voice"],
   },
   {
     icon: "⚡",
@@ -24,7 +24,7 @@ const FEATURES = [
     color: "from-slate-600 to-slate-500",
     border: "border-slate-500/30",
     title: "400+ Integrations",
-    desc: "Connect your entire stack: HubSpot, Salesforce, Slack, WhatsApp, Stripe, Gmail, Notion and more.",
+    desc: "Connect your entire stack: CRM, messaging, billing, email, storage and every tool your team already uses.",
     tags: ["n8n", "Zapier", "Make"],
   },
   {

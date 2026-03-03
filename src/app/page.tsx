@@ -4,6 +4,7 @@ import StatsBar from "./components/StatsBar";
 import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
 import CTA from "./components/CTA";
+import ChatWidget from "./components/ChatWidget";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <CTA />
+      <ChatWidget />
     </main>
   );
 }
